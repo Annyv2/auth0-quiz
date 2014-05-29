@@ -49,7 +49,7 @@ angular.module("quiz/finish/finish.tpl.html", []).run(["$templateCache", functio
     "\n" +
     "    <p><a ng-click=\"tweet()\" class=\"btn btn-primary btn-twitter btn-lg\" role=\"button\">{{tweetText}}</a></p>\n" +
     "  </div>\n" +
-    "  \n" +
+    "\n" +
     "</div>");
 }]);
 
