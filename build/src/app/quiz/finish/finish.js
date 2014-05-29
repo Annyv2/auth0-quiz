@@ -16,7 +16,8 @@ angular.module('quiz.quiz.finish', [
   'QuizHelper',
   '$http',
   '$state',
-  function HomeController($scope, QuizHelper, $http, $state) {
+  '$timeout',
+  function HomeController($scope, QuizHelper, $http, $state, $timeout) {
     $scope.finishInfo = QuizHelper.getFinishInfo($scope.questions);
     $scope.congratsText = [
       'Use Auth0 you definetly need, youung padawan. Anyway, FREE Bitcoins you get :).',
@@ -24,11 +25,17 @@ angular.module('quiz.quiz.finish', [
       'Well done, young padawan. FREE Bitcoins you get :).',
       'You\'ve mastered the challenge, youung padawan. FREE Bitcoins you get :)'
     ];
-    $scope.start = function () {
-      $state.go('home');
-    };
     $scope.tweetText = 'Tell the world you\'re awesome';
+    function goToHome() {
+      $timeout(function () {
+        $state.go('info');
+      }, 300);
+    }
     $scope.tweet = function () {
+      if (!$scope.handle) {
+        $state.go('info');
+        return;
+      }
       $scope.tweetText = 'Telling the world...';
       $scope.tweeting = true;
       $http({
@@ -39,8 +46,10 @@ angular.module('quiz.quiz.finish', [
           type: 'quiz'
         }
       }).then(function (data) {
+        goToHome();
         $scope.tweetText = 'Your awesomeness has been shared';
       }, function (err) {
+        goToHome();
         $scope.tweetText = 'Your awesomeness has been shared';
       });
     };

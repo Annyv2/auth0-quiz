@@ -1,10 +1,23 @@
-angular.module('templates-app', ['home/home.tpl.html', 'login/login.tpl.html', 'quiz/finish/finish.tpl.html', 'quiz/question/question.tpl.html', 'quiz/quiz.tpl.html']);
+angular.module('templates-app', ['home/home.tpl.html', 'info/info.tpl.html', 'login/login.tpl.html', 'quiz/finish/finish.tpl.html', 'quiz/question/question.tpl.html', 'quiz/quiz.tpl.html']);
 
 angular.module("home/home.tpl.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("home/home.tpl.html",
     "<div class=\"home\">\n" +
     "  <h1 id=\"logo\"><img src=\"assets/auth0_logo_final_blue_RGB.png\" /></h1>\n" +
     "  <button class=\"btn btn-lg btn-primary\" ui-sref=\"quiz.question({number: 0})\">Start Quiz</button>\n" +
+    "</div>");
+}]);
+
+angular.module("info/info.tpl.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("info/info.tpl.html",
+    "<div class=\"home\">\n" +
+    "  <h1 id=\"logo\"><img src=\"assets/auth0_logo_final_blue_RGB.png\" /></h1>\n" +
+    "  <div>\n" +
+    "    <!-- Put here the features -->\n" +
+    "  </div>\n" +
+    "  <div>\n" +
+    "    <a ng-click=\"start()\" class=\"link\">Start again</a>\n" +
+    "  </div>\n" +
     "</div>");
 }]);
 
@@ -34,9 +47,9 @@ angular.module("quiz/finish/finish.tpl.html", []).run(["$templateCache", functio
     "    </div>\n" +
     "    \n" +
     "\n" +
-    "    <p><a ng-click=\"tweet()\" ng-disabled=\"!handle\" class=\"btn btn-primary btn-twitter btn-lg\" role=\"button\">{{tweetText}}</a></p>\n" +
+    "    <p><a ng-click=\"tweet()\" class=\"btn btn-primary btn-twitter btn-lg\" role=\"button\">{{tweetText}}</a></p>\n" +
     "  </div>\n" +
-    "  <a ng-click=\"start()\" class=\"link\">Start again</a>\n" +
+    "  \n" +
     "</div>");
 }]);
 

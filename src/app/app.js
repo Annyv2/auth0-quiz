@@ -4,6 +4,7 @@ angular.module( 'quiz', [
   'quiz.home',
   'quiz.quiz',
   'quiz.login',
+  'quiz.info',
   'ui.router'
 ])
 
