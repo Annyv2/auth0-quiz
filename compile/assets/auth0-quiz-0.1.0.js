@@ -1,5 +1,5 @@
 /**
- * auth0-quiz - v0.1.0 - 2014-05-28
+ * auth0-quiz - v0.1.0 - 2014-06-02
  * http://www.auth0.com/
  *
  * Copyright (c) 2014 Martin Gontovnikas
