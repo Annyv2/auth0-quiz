@@ -8,6 +8,7 @@ angular.module( 'quiz.info', [
     templateUrl: 'info/info.tpl.html',
     data: { 
       pageTitle: 'Learn more about Auth0',
+      bodyClass: 'info-body',
       requiresLogin: true
     }
   });

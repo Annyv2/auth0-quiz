@@ -212,7 +212,7 @@ module.exports = function ( grunt ) {
           port: 3000,
           base: '<%= build_dir %>',
           // Change this to '0.0.0.0' to access the server from outside.
-          hostname: 'localhost'
+          hostname: '0.0.0.0'
         }
       }
     },

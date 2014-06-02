@@ -21,6 +21,7 @@ angular.module( 'quiz', [
     if ( angular.isDefined( toState.data.pageTitle ) ) {
       $scope.pageTitle = toState.data.pageTitle + ' | Auth0 Quiz' ;
     }
+    $scope.bodyClass = toState.data.bodyClass || '';
   });
 })
 
