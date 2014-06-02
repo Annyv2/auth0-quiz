@@ -69,6 +69,7 @@ module.exports = {
       'vendor/angular-ui-utils/modules/route/route.js'
     ],
     css: [
+      'vendor/auth0-styleguide/css/index.css'
     ],
     assets: [
       'vendor/auth0-styleguide/img/*'
