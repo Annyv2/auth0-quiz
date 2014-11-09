@@ -11,6 +11,7 @@ angular.module('quiz', [
   '$urlRouterProvider',
   '$locationProvider',
   function myAppConfig($stateProvider, $urlRouterProvider, $locationProvider) {
+    $urlRouterProvider.otherwise('/');
   }
 ]).run(function run() {
 }).controller('AppCtrl', [
