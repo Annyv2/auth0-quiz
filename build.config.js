@@ -22,7 +22,7 @@ module.exports = {
   app_files: {
     js: [ 'src/**/*.js', '!src/**/*.spec.js', '!src/assets/**/*.js' ],
     jsunit: [ 'src/**/*.spec.js' ],
-    
+
     atpl: [ 'src/app/**/*.tpl.html' ],
     ctpl: [ 'src/common/**/*.tpl.html' ],
 
@@ -61,8 +61,10 @@ module.exports = {
     js: [
       'vendor/angular/angular.js',
       'vendor/angular-cookies/angular-cookies.js',
-      'vendor/auth0-widget.js/build/auth0-widget.js',
+      'vendor/auth0-lock/build/auth0-lock.js',
       'vendor/auth0-angular/build/auth0-angular.js',
+      'vendor/angular-jwt/dist/angular-jwt.js',
+      'vendor/a0-angular-storage/dist/angular-storage.js',
       'vendor/angular-bootstrap/ui-bootstrap-tpls.min.js',
       'vendor/angular-ui-router/release/angular-ui-router.js',
       'vendor/lodash/dist/lodash.js',
