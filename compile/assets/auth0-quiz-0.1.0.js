@@ -51545,8 +51545,6 @@ angular.module('quiz', [
   '$urlRouterProvider',
   '$locationProvider',
   function myAppConfig($stateProvider, $urlRouterProvider, $locationProvider) {
-    $urlRouterProvider.otherwise('/');
-    $locationProvider.hashPrefix('!');
   }
 ]).run(function run() {
 }).controller('AppCtrl', [

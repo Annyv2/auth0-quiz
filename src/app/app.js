@@ -9,8 +9,7 @@ angular.module( 'quiz', [
 ])
 
 .config( function myAppConfig ( $stateProvider, $urlRouterProvider, $locationProvider) {
-  $urlRouterProvider.otherwise( '/' );
-  $locationProvider.hashPrefix("!") ;
+
 })
 
 .run( function run () {

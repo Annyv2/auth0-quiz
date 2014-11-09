@@ -1,53 +1,57 @@
-angular.module( 'quiz.quiz.finish', [
+angular.module('quiz.quiz.finish', [
   'ui.router',
   'quiz.helper'
-])
-.config(function config( $stateProvider ) {
-  $stateProvider.state( 'quiz.finish', {
-    url: '/finish',
-    controller: 'FinishCtrl',
-    templateUrl: 'quiz/finish/finish.tpl.html',
-    data: { pageTitle: 'Quiz' }
-  });
-})
-.controller( 'FinishCtrl', function HomeController( $scope, QuizHelper, $http, $state, $timeout ) {
-  $scope.finishInfo = QuizHelper.getFinishInfo($scope.questions);
-  $scope.congratsText = [
-    "Use Auth0 you definetly need, youung padawan. Anyway, FREE Bitcoins you get :).",
-    "You're starting to get it, youung padawan. Anyway, FREE Bitcoins you get :)",
-    "Well done, young padawan. FREE Bitcoins you get :).",
-    "You've mastered the challenge, youung padawan. FREE Bitcoins you get :)"
-  ];
-
-  $scope.tweetText = "Tell the world you're awesome";
-
-  function goToHome() {
-    $timeout(function() {
-      $state.go('info');
-    }, 300);
+]).config([
+  '$stateProvider',
+  function config($stateProvider) {
+    $stateProvider.state('quiz.finish', {
+      url: '/finish',
+      controller: 'FinishCtrl',
+      templateUrl: 'quiz/finish/finish.tpl.html',
+      data: { pageTitle: 'Quiz' }
+    });
   }
-
-  $scope.tweet = function() {
-    if (!$scope.handle) {
-      $state.go('info');
-      return;
+]).controller('FinishCtrl', [
+  '$scope',
+  'QuizHelper',
+  '$http',
+  '$state',
+  '$timeout',
+  function HomeController($scope, QuizHelper, $http, $state, $timeout) {
+    $scope.finishInfo = QuizHelper.getFinishInfo($scope.questions);
+    $scope.congratsText = [
+      'Use Auth0 you definetly need, youung padawan. Anyway, FREE Bitcoins you get :).',
+      'You\'re starting to get it, youung padawan. Anyway, FREE Bitcoins you get :)',
+      'Well done, young padawan. FREE Bitcoins you get :).',
+      'You\'ve mastered the challenge, youung padawan. FREE Bitcoins you get :)'
+    ];
+    $scope.tweetText = 'Tell the world you\'re awesome';
+    function goToHome() {
+      $timeout(function () {
+        $state.go('info');
+      }, 300);
     }
-    $scope.tweetText = 'Telling the world...';
-    $scope.tweeting = true;
-    $http({
+    $scope.tweet = function () {
+      if (!$scope.handle) {
+        $state.go('info');
+        return;
+      }
+      $scope.tweetText = 'Telling the world...';
+      $scope.tweeting = true;
+      $http({
         method: 'POST',
         url: 'http://auth0-codecademy.herokuapp.com/api/finished',
         data: {
-            handle: $scope.handle,
-            type: 'quiz'
+          handle: $scope.handle,
+          type: 'quiz'
         }
-    }).then(function(data) {
+      }).then(function (data) {
         goToHome();
-        $scope.tweetText = "Your awesomeness has been shared";
-    }, function(err) {
+        $scope.tweetText = 'Your awesomeness has been shared';
+      }, function (err) {
         goToHome();
-        $scope.tweetText = "Your awesomeness has been shared";
-    });
+        $scope.tweetText = 'Your awesomeness has been shared';
+      });
+    };
   }
-
-});
+]);
