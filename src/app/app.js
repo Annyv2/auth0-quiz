@@ -9,7 +9,7 @@ angular.module( 'quiz', [
 ])
 
 .config( function myAppConfig ( $stateProvider, $urlRouterProvider, $locationProvider) {
-
+  $urlRouterProvider.otherwise( '/' );
 })
 
 .run( function run () {
