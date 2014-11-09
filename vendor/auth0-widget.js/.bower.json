@@ -1,0 +1,14 @@
+{
+  "name": "auth0-widget.js",
+  "homepage": "https://github.com/auth0/widget",
+  "version": "4.0.10",
+  "_release": "4.0.10",
+  "_resolution": {
+    "type": "version",
+    "tag": "v4.0.10",
+    "commit": "b8a0a72f0e8856d15c8e3b232902059f59256b41"
+  },
+  "_source": "git://github.com/auth0/widget.git",
+  "_target": "~4.0.0",
+  "_originalSource": "auth0-widget.js"
+}

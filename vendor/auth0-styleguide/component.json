@@ -1,0 +1,26 @@
+{
+  "name": "styleguide",
+  "version": "0.0.1",
+  "description": "Auth0 Styleguide component.",
+  "images": [
+    "css/budicon/fonts/budicon-font.eot",
+    "css/budicon/fonts/budicon-font.ttf",
+    "css/budicon/fonts/budicon-font.woff",
+    "css/budicon/fonts/budicon-font.svg",
+    "img/favicon.png",
+    "img/logo.svg",
+    "img/badge.png",
+    "img/badge.ai",
+    "img/logo-blue.ai",
+    "img/logo-grey.ai",
+    "img/logo-blue-vertical.ai",
+    "img/logo-grey-vertical.ai",    
+    "img/logo-blue-vertical.png",
+    "img/logo-grey-vertical.png",        
+    "img/logo-blue.png",
+    "img/logo-grey.png",
+    "img/logo.png"
+  ],
+  "styles": [ "css/index.css"],
+  "license": "MIT"
+}
