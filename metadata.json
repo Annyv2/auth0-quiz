@@ -1,0 +1,11 @@
+{
+  "name": "Auth0 Quiz App",
+  "type": "sample",
+  "tags": [
+    "nodejs",
+    "web",
+    "javascript",
+    "single-page-app",
+    "angular"
+  ]
+}
