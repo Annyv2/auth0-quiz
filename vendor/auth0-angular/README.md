@@ -66,7 +66,7 @@ angular.module('myCoolApp').controller('LoginCtrl', function(auth) {
   $scope.signin = function() {
     auth.signin({
       authParams: {
-        scope: 'openid profile' // This is if you want the full JWT
+        scope: 'openid name email picture' 
       }
     }, function() {
       $location.path('/user-info')
