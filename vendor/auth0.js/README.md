@@ -246,7 +246,7 @@ If you just want to get a new token for an addon that you've activated, you can 
 var options = {
   id_token: "your id token", // The id_token you have now
   api: 'firebase', // This defaults to the first active addon if any or you can specify this
-  "scope": "openid profile"		    // default: openid
+  "scope": "openid name email picture"		    // default: openid
 };
 
 auth0.getDelegationToken(options, function (err, delegationResult) {
